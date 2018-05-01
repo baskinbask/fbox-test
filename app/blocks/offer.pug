@@ -1,0 +1,11 @@
+mixin offer(selected, disabled)
+	.card__offer&attributes(attributes)
+		p.card__offer_default
+			| Чего сидишь? Порадуй котэ,
+			|
+			a.card__offer_link(href="#")
+				| купи
+		p.card__offer_selected
+			| #{ selected }
+		p.card__offer_disabled
+			| #{ disabled }

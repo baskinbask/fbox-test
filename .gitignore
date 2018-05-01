@@ -1,0 +1,12 @@
+.DS_Store
+node_modules
+bower_components
+Thumbs.db
+index.html
+
+*.sublime-project
+*.sublime-workspace
+
+
+# Psd templates
+psd

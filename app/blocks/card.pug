@@ -1,0 +1,14 @@
+mixin card(subtitle, desc)
+	.card__outer&attributes(attributes)
+		.card
+			p.card__uptitle
+				| Сказочное заморское явство
+			p.card__uptitle_hover
+				| Котэ не одобряет?
+			h4.card__title
+				| Нямушка
+			h2.card__subtitle
+				| #{ subtitle }
+			p.card__desc
+				| !{ desc }
+			block

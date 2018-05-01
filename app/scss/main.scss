@@ -1,0 +1,280 @@
+@import '../css/nanoreset.min.css';
+@import 'fonts';
+@import 'colors';
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: 'Trebuchet MS', 'Times New Roman', sans-serif;
+	font-size: 16px;
+	line-height: 1.2;	
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+section, div, p {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+	padding: 0;
+	margin: 0;
+}
+
+ul, li {
+	list-style: none;	
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	margin-top: 40px;
+	margin-bottom: 30px;
+	font-family: 'Exo 2.0';
+	font-size: 36px;
+	text-align: center;
+	color: #fff;
+}
+
+.main {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	min-height: 100vh;
+	background: url(../img/Shadow.png) 0 0 no-repeat /cover,
+	            url(../img/page-bg.jpg) 0 0 repeat, rgba(0,0,0,0.5);
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.card__outer {
+	position: relative;
+	content: '';
+	z-index: 0;
+	background-color: $default_color;
+	width: 320px;
+	height: 438px;
+	margin-top: 42px;
+	margin-bottom: 40px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+
+	&::before, &::after {
+		content: '';
+		position: absolute;
+		top: -42px;
+		width: 160px;
+		height: 42px;
+		background-color: inherit;
+	}
+
+	&::before {
+		left: 21px;
+		transform: skew(-45deg);
+	}
+
+	&::after {
+		right: 0;
+		border-top-right-radius: 10px;
+	}
+
+	&:hover {
+		background-color: $default_hover;
+
+		&::before, &::after {
+			background-color: $default_hover;
+		}
+
+		& .card__weight {
+	 		background: $default_hover;
+	 	}
+		
+	 	& .card__offer_link {
+	 		color: $default_hover;
+	 	}
+	}
+
+	&.active {
+		background-color: $active_color;
+
+		&::before, &::after {
+			background-color: $active_color;
+		}
+
+		& .card__weight {
+			background: $active_color;
+		}
+
+		&:hover:not(.no-hover) {
+			background-color: $active_hover;
+
+			&::before, &::after {
+				background-color: $active_hover;
+			}
+			
+			& .card__weight {
+				background: $active_hover;
+			}
+
+			& .card__uptitle {
+				display: none;
+			}
+
+			& .card__uptitle_hover {
+				display: inline-block;
+				color: $active-hover;
+			}
+		}
+	}
+
+	&.deactive {
+		pointer-events: none;
+		background-color: $deactive_color;		
+		filter: grayscale(60%) brightness(75%);
+
+		& .card__title, .card__subtitle {
+			opacity: 0.3;
+		}
+
+		& .card__weight {
+			background: $deactive_color;
+			opacity: 1;
+		}
+
+		& .card__offer_default {
+			display: none;	
+		}
+
+		& .card__offer_disabled {
+			display: block;
+		}
+
+		&:hover {
+			cursor: default;		
+		}
+	}
+}
+
+.card {
+	position: relative;
+	z-index: 1;
+	width: 312px;
+	height: 434px;
+	margin-left: 4px;
+	padding-left: 42px;
+	background: url(../img/Photo.png) -35px 160px no-repeat, #f2f2f2; 
+	// border: 4px solid $default_color;
+	// border-radius: 10px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	cursor: pointer;
+
+	&::before, &::after {
+		content: '';
+		position: absolute;
+		top: -38px;
+		width: 156px;
+		height: 39px;
+		background-color: inherit;
+	}
+
+	&::before {
+		left: 19px;
+		transform: skew(-45deg);
+	}
+
+	&::after {
+		right: 0;
+		border-top-right-radius: 8px;
+	}
+
+
+
+	&--wrapper {
+		position: relative;
+		flex: 0 1 auto;
+	}
+
+	&__uptitle, &__uptitle_hover {
+		position: absolute;
+		top: -20px;
+		z-index: 2;
+		color: #666;
+	}
+
+	&__uptitle_hover {
+		display: none;
+	}
+
+	&__title {
+		margin-top: 5px;
+		font-size: 48px;
+		font-weight: bold;
+	}
+
+	&__subtitle {
+		font-size: 24px;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+
+	&__desc {
+		font-size: 14px;
+		color: #666;
+	}
+
+	&__weight {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		width: 85px;
+		height: 85px;
+		background: $default_color;
+		border-radius: 50%;
+		font-size: 21px;
+		text-align: center;
+		padding-top: 5px;
+		text-transform: uppercase;
+		color: #fff;
+		z-index: 3;
+
+		b {
+			font-size: 42px;
+		}
+	}
+
+	&__offer {
+		margin-bottom: 20px;
+		font-size: 13px;
+		color: #fff;
+		font-weight: bold;
+		text-align: center;
+
+		&_link {
+			text-decoration: none;			
+			color: $default_color;
+			border-bottom: 1px dashed $default_color;
+		}
+
+		&_selected {
+			display: none;
+			color: inherit;
+		}
+
+		&_disabled {
+			display: none;
+			color: #FFFF66;
+			opacity: 0.5;
+		}
+	}
+}
