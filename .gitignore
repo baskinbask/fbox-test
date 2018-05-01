@@ -2,7 +2,6 @@
 node_modules
 bower_components
 Thumbs.db
-index.html
 
 *.sublime-project
 *.sublime-workspace
