@@ -43,16 +43,18 @@ h1 {
 
 .main {
 	display: flex;
-	flex-flow: column nowrap;
+	flex-direction: column;
 	justify-content: center;
 	min-height: 100vh;
-	background: url(../img/Shadow.png) 0 0 no-repeat /cover,
+	height: 100px; //fix bug with min-height and justify-content:center in IE11
+	background: url(../img/Shadow.png) 0 0 no-repeat,
 	            url(../img/page-bg.jpg) 0 0 repeat, rgba(0,0,0,0.5);
 	background-size: cover, auto;	            
 }
 
 .wrapper {
 	display: flex;
+	justify-content: space-around; //fallback for IE11
 	justify-content: space-evenly;
 	align-items: center;
 	flex-wrap: wrap;
