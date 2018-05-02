@@ -48,6 +48,7 @@ h1 {
 	min-height: 100vh;
 	background: url(../img/Shadow.png) 0 0 no-repeat /cover,
 	            url(../img/page-bg.jpg) 0 0 repeat, rgba(0,0,0,0.5);
+	background-size: cover, auto;	            
 }
 
 .wrapper {
@@ -255,7 +256,7 @@ h1 {
 
 	&__offer {
 		margin-bottom: 20px;
-		font-size: 13px;
+		font-size: 12px;
 		color: #fff;
 		font-weight: bold;
 		text-align: center;
