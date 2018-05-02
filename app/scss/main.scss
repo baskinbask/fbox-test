@@ -145,6 +145,10 @@ h1 {
 		background-color: $deactive_color;		
 		filter: grayscale(60%) brightness(75%);
 
+		& .card {
+			opacity: 0.6;  //for ie11
+		}
+
 		& .card__title, .card__subtitle {
 			opacity: 0.3;
 		}
@@ -175,9 +179,7 @@ h1 {
 	height: 434px;
 	margin-left: 4px;
 	padding-left: 42px;
-	background: url(../img/Photo.png) -35px 160px no-repeat, #f2f2f2; 
-	// border: 4px solid $default_color;
-	// border-radius: 10px;
+	background: url(../img/Photo.png) -35px 160px no-repeat, #f2f2f2;
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	cursor: pointer;
