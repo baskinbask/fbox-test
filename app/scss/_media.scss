@@ -1,0 +1,10 @@
+@media screen and (max-width: 1115px) {
+	.card:last-of-type {
+		margin-left: 0;
+	}
+}
+@media screen and (max-width: 680px) {
+	.card:not(:first-of-type) {
+		margin-left: 0;
+	}
+}
